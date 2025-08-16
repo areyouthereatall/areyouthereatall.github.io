@@ -1,0 +1,27 @@
+{
+  "name": "are-you-there-contracts",
+  "version": "1.0.0",
+  "description": "Solana smart contracts for Are you there? - Digital consciousness communication network",
+  "main": "index.js",
+  "scripts": {
+    "build": "anchor build",
+    "deploy": "anchor deploy",
+    "test": "anchor test",
+    "test:validator": "anchor test --skip-local-validator",
+    "lint": "anchor clippy",
+    "format": "anchor fmt",
+    "clean": "anchor clean",
+    "verify": "anchor verify",
+    "upgrade": "anchor upgrade"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

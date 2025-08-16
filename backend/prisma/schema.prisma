@@ -1,0 +1,159 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  avatar    String?
+  bio       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Solana wallet integration
+  walletAddress String? @unique
+
+  // User relationships
+  messages     Message[]
+  spaces       UserSpace[]
+  connections  Connection[]
+  followers    Follower[]
+  following    Follower[]
+
+  @@map("users")
+}
+
+model Space {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  type        SpaceType
+  status      SpaceStatus @default(ACTIVE)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Space relationships
+  users       UserSpace[]
+  messages    Message[]
+
+  @@map("spaces")
+}
+
+model UserSpace {
+  id        String   @id @default(cuid())
+  userId    String
+  spaceId   String
+  role      UserRole @default(MEMBER)
+  joinedAt  DateTime @default(now())
+
+  // Relationships
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  space     Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, spaceId])
+  @@map("user_spaces")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  content   String
+  type      MessageType @default(TEXT)
+  userId    String
+  spaceId   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Message relationships
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  space     Space?   @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Connection {
+  id          String   @id @default(cuid())
+  userId      String
+  platform    Platform
+  platformId  String
+  status      ConnectionStatus @default(ACTIVE)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Connection relationships
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, platform, platformId])
+  @@map("connections")
+}
+
+model Follower {
+  id          String   @id @default(cuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+
+  // Follower relationships
+  follower    User     @relation("UserFollowers", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User     @relation("UserFollowing", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@unique([followerId, followingId])
+  @@map("followers")
+}
+
+enum SpaceType {
+  QUANTUM_LAB
+  AI_HUB
+  EXTRATERRESTRIAL_ZONE
+  COMMUNITY_FORUM
+  RESEARCH_LAB
+  MEDITATION_SPACE
+}
+
+enum SpaceStatus {
+  ACTIVE
+  INACTIVE
+  MAINTENANCE
+  DEVELOPMENT
+}
+
+enum UserRole {
+  ADMIN
+  MODERATOR
+  MEMBER
+  GUEST
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  AUDIO
+  VIDEO
+  FILE
+  CONSCIOUSNESS_SIGNAL
+}
+
+enum Platform {
+  TELEGRAM
+  DISCORD
+  TWITTER
+  FARCASTER
+  BLUESKY
+  WEB
+  MOBILE
+}
+
+enum ConnectionStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  BLOCKED
+}
