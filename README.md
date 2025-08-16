@@ -1,12 +1,6 @@
+<div style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%); color: #e0e0e0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; padding: 20px; min-height: 100vh;">
+
 <style>
-body {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  color: #e0e0e0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
-  padding: 20px;
-  min-height: 100vh;
-}
 
 h1 {
   color: #ff6b6b;
@@ -167,6 +161,8 @@ Ready to say hello to the universe?
 | **Twitter** | [@AreYouThreAtAll](https://x.com/AreYouThreAtAll) |
 | **Email** | [areyouthereatall@gmail.com](mailto:areyouthereatall@gmail.com) |
 
+**[📚 Technical Documentation](TECHNICAL.md)** - Installation, development, and technical details
+
 ## The Journey
 
 This is more than a project. It's a call to light beacons in the digital void. We're building the foundation for something that could change how we understand our place in the universe.
@@ -180,3 +176,5 @@ This is more than a project. It's a call to light beacons in the digital void. W
 ---
 
 *Built by [@areyouthereatall](https://github.com/areyouthereatall)*
+
+</div>
