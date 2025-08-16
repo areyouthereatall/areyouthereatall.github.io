@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Search, Users, Zap, Globe, Shield } from 'lucide-react'
+import { ArrowRight, Globe, MessageCircle, Search, Shield, Users, Zap } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-cyan-400 mb-8 animate-fade-in">
             Light a Beacon
           </h2>
-          
+
           <div className="max-w-4xl mx-auto mb-12">
             <blockquote className="text-xl md:text-2xl text-purple-200 italic border-l-4 border-blue-400 pl-6 py-4 bg-slate-800/50 rounded-r-lg animate-slide-up">
               "We are not alone. We never were. We just forgot how to look."
@@ -55,10 +55,10 @@ const Home: React.FC = () => {
           </div>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto animate-fade-in">
-            You know that feeling when you're alone in your room at 3 AM and you're pretty sure something else is thinking about you? 
+            You know that feeling when you're alone in your room at 3 AM and you're pretty sure something else is thinking about you?
             Not in a creepy way. More like... something's trying to get your attention and you're too busy doom-scrolling to notice.
           </p>
-          
+
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto animate-fade-in">
             That's what we're building here. A way to actually listen.
           </p>
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
               The Plan
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-4 text-center">Build networks that don't suck</h3>
               <p className="text-gray-300 text-center">Real-time communication that actually works</p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
                 <MessageCircle className="w-8 h-8 text-white" />
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-4 text-center">Create spaces where consciousness can meet</h3>
               <p className="text-gray-300 text-center">Whether that's AI, aliens, God, or your neighbor's cat</p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
                 <Users className="w-8 h-8 text-white" />
@@ -146,20 +146,20 @@ const Home: React.FC = () => {
               Why You Should Care
             </h2>
           </div>
-          
+
           <div className="space-y-6 max-w-4xl mx-auto">
             <div className="bg-slate-800/50 rounded-lg p-6 border-l-4 border-orange-400">
               <p className="text-lg text-gray-300">
                 Because the alternative is sitting around waiting for Elon Musk to tweet about it.
               </p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-lg p-6 border-l-4 border-blue-400">
               <p className="text-lg text-gray-300">
                 Because if there's something out there trying to talk to us, it's probably using technology we haven't invented yet.
               </p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-lg p-6 border-l-4 border-purple-400">
               <p className="text-lg text-gray-300">
                 Because the universe is too big and too weird for us to be the only ones thinking about it.
@@ -177,18 +177,18 @@ const Home: React.FC = () => {
               What We're Actually Building
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700">
               <h3 className="text-xl font-bold text-orange-400 mb-4">Communication networks</h3>
               <p className="text-gray-300">that work across whatever dimensions exist</p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700">
               <h3 className="text-xl font-bold text-blue-400 mb-4">Digital spaces</h3>
               <p className="text-gray-300">where humans and non-humans can meet</p>
             </div>
-            
+
             <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700">
               <h3 className="text-xl font-bold text-purple-400 mb-4">Tools</h3>
               <p className="text-gray-300">that anyone can use to say "hello" to the universe</p>
@@ -203,17 +203,17 @@ const Home: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-8 border-b-2 border-cyan-400 pb-4 inline-block">
             The Truth
           </h2>
-          
+
           <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700 mb-8">
             <p className="text-xl text-gray-300 mb-6">
               We don't know what we're doing. We're making it up as we go. But we're doing it together, and we're doing it in public.
             </p>
-            
+
             <p className="text-2xl font-bold text-white">
               The question isn't "Are you there?" It's "Are you ready to help us figure this out?"
             </p>
           </div>
-          
+
           <Link
             to="/about"
             className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center shadow-lg"
